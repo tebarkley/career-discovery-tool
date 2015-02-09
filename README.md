@@ -1,2 +1,2 @@
 # career-discovery-tool
-MIMS final project
+MIMS final project on career discovery.
