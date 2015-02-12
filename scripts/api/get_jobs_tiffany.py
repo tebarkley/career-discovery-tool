@@ -50,10 +50,10 @@ def get_jobs(num_jobs=500, invalid=invalid):
             break
     return daily_jobs_call, invalid
 
-  jobs, invalid = get_jobs()
+jobs, invalid = get_jobs()
 
-  #write invalid jobs to a pkl file
-  if invalid:
+#write invalid jobs to a pkl file
+if invalid:
     invalid_series = pd.Series(list(invalid))
     invalid_series.to_pickle(path.join(pardir, pardir, 'data', 'invalid_job_ids.pickle'))
 
