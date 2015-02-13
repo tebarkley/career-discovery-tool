@@ -35,7 +35,7 @@ job_ids = [job_id for job_id in job_ids if job_id not in invalid and job_id not 
 def get_jobs(num_jobs=500, invalid=invalid):
     daily_jobs_call = pd.DataFrame()
     for i, job_id in enumerate(job_ids):
-        parameters = {'DeveloperKey': settings.CB_API_KEY, 
+        parameters = {'DeveloperKey': settings.CB_API_KEY_ANNA, 
                       'DID': job_id}
         r = requests.get('http://api.careerbuilder.com/v3/job/', params=parameters)
         o = xmltodict.parse(r.content)
