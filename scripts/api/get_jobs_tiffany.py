@@ -4,6 +4,7 @@ import xmltodict
 import json
 from os import path, pardir
 import settings
+import datetime
 from pandas.io.json import json_normalize
 
 #set path to script
