@@ -6,6 +6,9 @@ from os import path, pardir
 import settings
 from pandas.io.json import json_normalize
 
+#set path to script
+chdir(path.dirname(path.abspath(__file__)))
+
 #read in dataframe from job search
 master_df = pd.io.pickle.read_pickle(path.join(pardir, pardir, 'data', 'tiff_jobs_Feb9.pkl'))
 

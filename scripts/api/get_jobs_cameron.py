@@ -2,11 +2,12 @@ import pandas as pd
 import requests
 import xmltodict
 import json
-from os import path, pardir
+from os import path, pardir, chdir
 import settings
-import sys
-import datetime
 from pandas.io.json import json_normalize
+
+#set path to script
+chdir(path.dirname(path.abspath(__file__)))
 
 #read in dataframe from job search
 master_df = pd.io.pickle.read_pickle(path.join(pardir, pardir, 'data', 'cam_jobs_Feb9.pkl'))
