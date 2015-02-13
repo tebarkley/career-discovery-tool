@@ -2,7 +2,7 @@ import pandas as pd
 import requests
 import xmltodict
 import json
-from os import path, pardir
+from os import path, pardir, chdir
 import settings
 import datetime
 from pandas.io.json import json_normalize
