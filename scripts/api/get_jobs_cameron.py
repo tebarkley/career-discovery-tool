@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/groups/occxplorer/venv/bin
 
 import pandas as pd
 import requests
@@ -15,15 +15,15 @@ master_df = pd.io.pickle.read_pickle(path.join(pardir, pardir, 'data', 'cam_jobs
 
 #Get the job descriptions that we've already called
 if path.isfile(path.join(pardir, pardir, 'data', 'cam_job_descriptions.pkl')):
-    obtained_jobs = pd.io.pickle.read_pickle(path.join(pardir, 'data', 'cam_job_descriptions.pkl'))
+    obtained_jobs = pd.io.pickle.read_pickle(path.join(pardir, pardir, 'data', 'cam_job_descriptions.pkl'))
     obtained = set([job_id.encode('ascii', 'ignore') for job_id in obtained_jobs.DID])
 else:
     obtained_jobs = pd.DataFrame()
     obtained = set()
 
 #create a set of the job ids already found to be valid
-if path.isfile(path.join(pardir, 'data', 'cam_invalid_job_ids.pkl')):
-    invalid = set(pd.io.pickle.read_pickle(path.join(pardir, 'data', 'cam_invalid_job_ids.pkl')))
+if path.isfile(path.join(pardir, pardir, 'data', 'cam_invalid_job_ids.pkl')):
+    invalid = set(pd.io.pickle.read_pickle(path.join(pardir, pardir, 'data', 'cam_invalid_job_ids.pkl')))
 else:
     invalid = set()
 
@@ -59,7 +59,7 @@ if invalid:
 
 #write today's jobs to a file
 filetime = str(datetime.datetime.now()).replace(' ', '_').replace(':', '_').replace('.','_').replace('-','_')[:16]
-jobs.to_pickle(path.join(pardir, pardir, 'data', 'no_git','jobs_call_' + filetime + '.pkl'))
+jobs.to_pickle(path.join(pardir, pardir, 'data', 'jobs_call_' + filetime + '.pkl'))
 
 #write jobs obtained to data to a file
 all_jobs = pd.concat([obtained_jobs, jobs], ignore_index=True)
