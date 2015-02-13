@@ -1,5 +1,3 @@
-#!/groups/occxplorer/venv/bin
-
 import pandas as pd
 import requests
 import xmltodict
