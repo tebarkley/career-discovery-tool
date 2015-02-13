@@ -55,7 +55,7 @@ jobs, invalid = get_jobs()
 #write invalid jobs to a pkl file
 if invalid:
 	invalid_series = pd.Series(list(invalid))
-	invalid_series.to_pickle(path.join(pardir, pardir, 'data', 'anna_invalid_job_ids.pickle'))
+	invalid_series.to_pickle(path.join(pardir, pardir, 'data', 'anna_invalid_job_ids.pkl'))
 
 #write today's jobs to a file
 filetime = str(datetime.datetime.now()).replace(' ', '_').replace(':', '_').replace('.','_').replace('-','_')[:16]
