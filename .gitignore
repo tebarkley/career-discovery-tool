@@ -1,2 +1,3 @@
 scripts/api/settings.*
-data/no_git/*
+data/*invalid_job_ids.pkl
+data/*jobs_call*
