@@ -1,3 +1,4 @@
 scripts/api/settings.*
 data/*invalid_job_ids.pkl
 data/*jobs_call*
+scripts/api/.ipynb_checkpoints/*
